@@ -1,358 +1,801 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eglardo Fabricio Alves dos Santos - Currículo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <base target="_blank">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('has-js');</script>
+<title>Eglardo Fabrício Alves dos Santos — Engenheiro Eletricista &amp; Automação</title>
+<meta name="description" content="Currículo online de Eglardo Fabrício Alves dos Santos — Engenharia Elétrica, Automação, IA, Sensoriamento por Satélite e Agricultura de Precisão.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1F30;
+    --panel:#0F2740;
+    --panel-2:#123049;
+    --line:#1E3B54;
+    --line-soft:#17324A;
+    --text:#E7EEE9;
+    --text-dim:#8FA6B7;
+    --accent:#7FD9A8;
+    --accent-soft:rgba(127,217,168,.14);
+    --amber:#E8A33D;
+    --amber-soft:rgba(232,163,61,.14);
+    --radius:2px;
+    --maxw:980px;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'IBM Plex Sans',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* faint blueprint grid backdrop across the whole page */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:42px 42px;
+    opacity:.35;
+  }
+
+  main, header, footer{position:relative; z-index:1;}
+
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; margin:0; letter-spacing:-.01em;}
+  .mono{font-family:var(--font-mono);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+  }
+  .eyebrow::before{content:"//"; color:var(--text-dim);}
+
+  /* ---------- NAV ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(9,26,41,.97);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  .brand{
+    font-family:var(--font-mono);
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.04em;
+    display:flex; align-items:center; gap:8px;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent);}
+  .navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
+  .navlinks a{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--text-dim);
+    padding:6px 0;
+    border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  .navlinks a:hover{color:var(--accent); border-color:var(--accent);}
+  .navtoggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 46px; border-bottom:1px solid var(--line);}
+  .hero .kicker{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero .kicker::before{
+    content:""; width:34px; height:1px; background:var(--amber);
+  }
+  .hero h1{
+    font-size:clamp(38px, 6.4vw, 66px);
+    line-height:1.02;
+    color:#fff;
+  }
+  .hero h1 span{display:block; color:var(--accent);}
+  .hero .role{
+    margin-top:20px;
+    font-size:clamp(16px,2.2vw,20px);
+    color:var(--text-dim);
+    max-width:620px;
+  }
+  .tagrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
+  .tag{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    border-radius:var(--radius);
+  }
+  .tag.on{color:var(--accent); border-color:var(--accent); background:var(--accent-soft);}
+
+  .readout{
+    margin-top:34px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--accent);
+    display:flex; flex-wrap:wrap; gap:6px 16px;
+  }
+  .readout span{color:var(--text-dim);}
+
+  .herobtns{display:flex; flex-wrap:wrap; gap:12px; margin-top:34px;}
+  .btn{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:var(--radius);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, background .2s, color .2s, border-color .2s;
+    border:1px solid var(--line);
+    color:var(--text);
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn.primary{background:var(--accent); color:#0B1F30; border-color:var(--accent); font-weight:700;}
+  .btn.primary:hover{background:#93e3b6;}
+  .btn.ghost:hover{border-color:var(--accent); color:var(--accent);}
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    border-bottom:1px solid var(--line);
+    background:var(--panel);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:12px 0;
+  }
+  .ticker-track{
+    display:inline-flex;
+    gap:44px;
+    animation:scroll 32s linear infinite;
+  }
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .ticker-item{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--text-dim);
+    letter-spacing:.04em;
+  }
+  .ticker-item b{color:var(--accent); font-weight:700;}
+  .ticker-item .sep{color:var(--amber); margin-left:44px;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:74px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:34px; gap:16px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(24px,3.2vw,32px); color:#fff;}
+  .section-head .idx{font-family:var(--font-mono); color:var(--line); font-size:13px;}
+
+  .reveal{transition:opacity .6s ease, transform .6s ease;}
+  html.has-js .reveal{opacity:0; transform:translateY(14px);}
+  html.has-js .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* panel / hud card with corner brackets */
+  .hud{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:26px 28px;
+    border-radius:var(--radius);
+  }
+  .hud::before, .hud::after{
+    content:""; position:absolute; width:14px; height:14px; pointer-events:none;
+  }
+  .hud::before{top:-1px; left:-1px; border-top:2px solid var(--accent); border-left:2px solid var(--accent);}
+  .hud::after{bottom:-1px; right:-1px; border-bottom:2px solid var(--accent); border-right:2px solid var(--accent);}
+
+  .lede p{color:var(--text-dim); max-width:820px; margin:0 0 16px;}
+  .lede p:last-child{margin-bottom:0;}
+  .lede strong{color:var(--text); font-weight:600;}
+
+  /* Áreas de atuação grid */
+  .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .area-card{
+    padding:22px 18px;
+    border:1px solid var(--line);
+    background:var(--panel);
+    border-radius:var(--radius);
+  }
+  .area-card .n{font-family:var(--font-mono); font-size:11px; color:var(--amber); letter-spacing:.08em;}
+  .area-card h3{font-size:16px; margin:10px 0 8px; color:#fff;}
+  .area-card p{margin:0; font-size:13.5px; color:var(--text-dim); line-height:1.55;}
+
+  /* Timeline / circuit trace */
+  .timeline{position:relative; padding-left:34px;}
+  .timeline::before{
+    content:"";
+    position:absolute; left:6px; top:6px; bottom:6px; width:1px;
+    background:repeating-linear-gradient(to bottom, var(--accent) 0 4px, transparent 4px 9px);
+  }
+  .titem{position:relative; margin-bottom:44px;}
+  .titem:last-child{margin-bottom:0;}
+  .titem::before{
+    content:""; position:absolute; left:-34px; top:6px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent);
+  }
+  .titem::after{
+    content:""; position:absolute; left:-23px; top:11px; width:23px; height:1px;
+    background:var(--accent);
+  }
+  .tcard{padding:22px 24px;}
+  .thead{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 16px; margin-bottom:4px;}
+  .thead .idx{font-family:var(--font-mono); font-size:11px; color:var(--amber); letter-spacing:.1em;}
+  .thead h3{font-size:19px; color:#fff; margin-top:4px;}
+  .thead .loc{color:var(--text-dim); font-weight:400; font-size:15px;}
+  .thead .dates{font-family:var(--font-mono); font-size:12.5px; color:var(--accent); white-space:nowrap;}
+  .role{font-style:italic; color:var(--text-dim); font-size:14.5px; margin:2px 0 14px;}
+  .blist{margin:0; padding-left:0; list-style:none;}
+  .blist li{
+    position:relative; padding-left:18px; margin-bottom:8px;
+    color:var(--text-dim); font-size:14.5px;
+  }
+  .blist li::before{content:"›"; position:absolute; left:0; color:var(--accent); font-family:var(--font-mono);}
+  .tech{margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); font-size:13px; color:var(--text-dim);}
+  .tech b{font-family:var(--font-mono); color:var(--amber); font-weight:600; text-transform:uppercase; font-size:11px; letter-spacing:.06em;}
+
+  /* Formação grid */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .edu-card{
+    padding:18px 20px; border:1px solid var(--line); background:var(--panel); border-radius:var(--radius);
+  }
+  .edu-card h3{font-size:15px; color:#fff; margin-bottom:6px; line-height:1.35;}
+  .edu-card .school{font-size:13.5px; color:var(--text-dim);}
+  .edu-card .meta{font-family:var(--font-mono); font-size:11.5px; color:var(--accent); margin-top:8px; display:block;}
+
+  /* Habilidades */
+  .skillgroup{margin-bottom:26px;}
+  .skillgroup:last-child{margin-bottom:0;}
+  .skillgroup .label{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:12px; display:block;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:var(--font-mono); font-size:12px; padding:6px 11px;
+    border:1px solid var(--line); border-radius:var(--radius); color:var(--text-dim);
+  }
+
+  /* Idiomas — signal bars */
+  .langs{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .lang{padding:18px; border:1px solid var(--line); background:var(--panel); border-radius:var(--radius);}
+  .lang .name{font-weight:600; color:#fff; font-size:14.5px;}
+  .lang .lvl{font-family:var(--font-mono); font-size:11.5px; color:var(--text-dim); margin:6px 0 10px;}
+  .bars{display:flex; gap:4px;}
+  .bars i{flex:1; height:6px; background:var(--line); border-radius:1px;}
+  .bars i.fill{background:var(--accent);}
+
+  /* Contato / footer */
+  footer{padding:70px 0 40px;}
+  .contact-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start;}
+  footer h2{font-size:clamp(26px,4vw,40px); color:#fff; margin-bottom:16px;}
+  footer .lede-foot{color:var(--text-dim); max-width:480px; margin-bottom:26px;}
+  .contact-links{display:flex; flex-direction:column; gap:12px;}
+  .contact-links a{
+    font-family:var(--font-mono); font-size:14px; text-decoration:none; color:var(--text);
+    display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid var(--line);
+    transition:color .2s, padding-left .2s;
+  }
+  .contact-links a:hover{color:var(--accent); padding-left:6px;}
+  .contact-links a .k{color:var(--text-dim); width:96px; flex-shrink:0; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em;}
+  .foot-meta{
+    font-family:var(--font-mono); font-size:11px; color:var(--text-dim);
+    display:flex; justify-content:space-between; margin-top:50px; padding-top:20px; border-top:1px solid var(--line);
+    flex-wrap:wrap; gap:8px;
+  }
+  .foot-meta .coord{color:var(--accent);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .grid4{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .langs{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .navlinks{
+      position:fixed; top:60px; left:0; right:0; bottom:0;
+      background:var(--bg); flex-direction:column; padding:26px 28px; gap:4px;
+      transform:translateX(100%); transition:transform .25s ease; z-index:35;
+    }
+    .navlinks.open{transform:translateX(0);}
+    .navlinks a{padding:14px 0; border-bottom:1px solid var(--line); width:100%;}
+    .navtoggle{
+      display:flex; align-items:center; justify-content:center;
+      width:36px; height:36px; border:1px solid var(--line); background:none; color:var(--text);
+      border-radius:var(--radius); cursor:pointer;
+    }
+    .grid4{grid-template-columns:1fr;}
+    .grid2{grid-template-columns:1fr;}
+    .langs{grid-template-columns:1fr 1fr;}
+    .thead{flex-direction:column; align-items:flex-start;}
+    section{padding:56px 0;}
+  }
+
+  @media print{
+    body::before{display:none;}
+    .topnav,.ticker,.navtoggle,.herobtns{display:none;}
+    body{background:#fff; color:#111;}
+    .hud,.area-card,.edu-card,.lang,.tcard{border-color:#ccc; background:#fff;}
+  }
+</style>
 </head>
 <body>
-    <link rel="stylesheet" href="css/style.css">
-    <div class="container">
-        <!-- HEADER -->
-        <header class="header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1>EGLARDO FABRICIO ALVES DOS SANTOS</h1>
-                    <div class="title-badge">
-                        <i class="fas fa-bolt" style="margin-right:6px;"></i>
-                        SENIOR E&I ENGINEERING SPECIALIST
-                    </div>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Campina Grande – Paraíba – Brazil
-                    </div>
-                    <div class="summary">
-                        Engenheiro Eletricista com experiência em engenharia elétrica industrial, energia renovável, automação industrial, manutenção, confiabilidade e suporte técnico. Expertise em sistemas elétricos, automação, inspeção, análise preditiva, engenharia de dados e sistemas de monitoramento baseados em IA aplicados a ambientes industriais e agrotech. Perfil analítico sólido com expertise técnica multidisciplinar em engenharia elétrica, automação, sensores, sistemas embarcados e transformação digital industrial.
-                    </div>
-                </div>
-                <div class="header-right">
-                    <a href="tel:+5583996018715" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+55 83 99601-8715</span>
-                    </a>
-                    <a href="mailto:guigesaifarm@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>guigesaifarm@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/eglardo-fabricio-a6127538/" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://guigesaifarm.github.io/Campifitech/" target="_blank" class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub / Portfolio</span>
-                    </a>
-                </div>
-            </div>
-        </header>
 
-        <div class="main-grid">
-            <!-- LEFT COLUMN -->
-            <div class="left-col">
-                <!-- EXPERIENCE -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-briefcase"></i></div>
-                        <h2>Experiência Profissional</h2>
-                    </div>
-                    <div class="timeline">
-                        <!-- Job 1 -->
-                        <div class="timeline-item current">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">Desenvolvedor de Projetos de Software</div>
-                                    <div class="job-company">GuigesAIFarm (Autônomo)</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>Remoto</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>2019 – Atual</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Desenvolvimento de sistemas de monitoramento e análise preditiva orientados por IA para agricultura e ambientes industriais</li>
-                                <li>Plataformas de monitoramento baseadas em sensores para operações industriais e rurais</li>
-                                <li>Modelos de manutenção preditiva e confiabilidade operacional utilizando machine learning</li>
-                                <li>Análise e gerenciamento de grandes volumes de dados SQL provenientes de sensores e sistemas de monitoramento</li>
-                                <li>Implementação de sistemas de automação e embarcados integrando sensores, microcontroladores e análise de dados</li>
-                                <li>Suporte à otimização operacional através de IA, machine learning, automação e engenharia de confiabilidade</li>
-                            </ul>
-                            <div class="highlights">
-                                <div class="highlights-title"><i class="fas fa-star" style="margin-right:6px;"></i>Principais Destaques</div>
-                                <ul class="job-list">
-                                    <li>Análise preditiva para monitoramento de equipamentos com IA e Deep Learning</li>
-                                    <li>Integração de sensores e automação industrial com CLP e embedded systems</li>
-                                    <li>Análise de dados orientada à confiabilidade e otimização de processos</li>
-                                </ul>
-                            </div>
-                        </div>
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#topo" class="brand"><span class="dot"></span>EFAS<span style="color:var(--text-dim)">.eng</span></a>
+    <button class="navtoggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#resumo">Resumo</a></li>
+      <li><a href="#atuacao">Atuação</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
 
-                        <!-- Job 2 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">Analista PCP (Planejamento, Controle e Produção)</div>
-                                    <div class="job-company">SUPERCITRUS</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>Uberlândia – MG</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>Jan 2024 – Mar 2024</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Planejamento de produção e controle operacional utilizando sistemas ERP</li>
-                                <li>Gestão de estoque e materiais para operações industriais</li>
-                                <li>Suporte à organização do fluxo de trabalho e melhoria da eficiência produtiva</li>
-                                <li>Utilização de SAP/TOTVS, MRP e Excel avançado para controle de produção</li>
-                                <li>Apoio a iniciativas de melhoria contínua e organização operacional</li>
-                            </ul>
-                        </div>
+<main id="topo">
 
-                        <!-- Job 3 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">Professor de Matemática e Ciências</div>
-                                    <div class="job-company">Prefeitura Municipal de Uberlândia</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>Uberlândia – MG</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>2020 – 2023</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Ensino de conteúdos de matemática, física e fundamentos técnicos</li>
-                                <li>Aplicação de metodologias ativas (PBL, sala invertida)</li>
-                                <li>Uso de ferramentas tecnológicas (GeoGebra, MATLAB, Google Classroom)</li>
-                                <li>Desenvolvimento do raciocínio lógico e resolução de problemas</li>
-                            </ul>
-                        </div>
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">Currículo online — atualizado 2026</div>
+      <h1>Eglardo Fabrício<span>Alves dos Santos</span></h1>
+      <p class="role">Engenheiro Eletricista &amp; de Automação Sênior atuando na interseção entre engenharia industrial, inteligência artificial e agricultura de precisão orientada por dados de satélite.</p>
 
-                        <!-- Job 4 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">Gerente de Projetos Elétricos de Energia Renovável (Solar)</div>
-                                    <div class="job-company">ELETROITA</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>João Pessoa – PB</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>Jan 2017 – Dez 2019</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Desenvolvimento e engenharia de sistemas elétricos fotovoltaicos residenciais, comerciais e industriais</li>
-                                <li>Elaboração de projetos elétricos considerando análise de carga, irradiância e integração à rede</li>
-                                <li>Experiência com sistemas de baixa e média tensão e infraestrutura de energia renovável</li>
-                                <li>Suporte técnico para instalação, comissionamento e inspeção de sistemas fotovoltaicos</li>
-                                <li>Aplicação de normas IEC e boas práticas de engenharia elétrica</li>
-                                <li>Estudos de viabilidade, análise de ROI e avaliações técnico-econômicas</li>
-                            </ul>
-                            <div style="margin-top:12px;">
-                                <span class="tools-tag"><i class="fas fa-cube" style="margin-right:4px;"></i>AutoCAD</span>
-                                <span class="tools-tag"><i class="fas fa-cube" style="margin-right:4px;"></i>Revit</span>
-                                <span class="tools-tag"><i class="fas fa-sun" style="margin-right:4px;"></i>PVSyst</span>
-                                <span class="tools-tag"><i class="fas fa-chart-line" style="margin-right:4px;"></i>HOMER</span>
-                                <span class="tools-tag"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>DiaLUX</span>
-                            </div>
-                        </div>
+      <div class="tagrow">
+        <span class="tag on">IA &amp; Dados</span>
+        <span class="tag on">Sensoriamento por Satélite</span>
+        <span class="tag on">Agricultura de Precisão</span>
+        <span class="tag">Automação Industrial</span>
+        <span class="tag">Confiabilidade &amp; Manutenção</span>
+        <span class="tag">IoT &amp; LoRaWAN</span>
+      </div>
 
-                        <!-- Job 5 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">1º Tenente Oficial da Reserva</div>
-                                    <div class="job-company">Marinha do Brasil</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>Rio de Janeiro – RJ</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>Fev 2012 – Nov 2016</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Responsável por atividades de construção e manutenção naval</li>
-                                <li>Manutenção e instalação de sistemas de radar, navegação e satelitais</li>
-                                <li>Supervisão de sistemas elétricos, motores a diesel, geradores e equipamentos eletromecânicos</li>
-                                <li>Atividades técnicas envolvendo soldagem, manutenção elétrica e sistemas de suporte industrial</li>
-                                <li>Experiência em procedimentos de segurança operacional e manutenção de sistemas críticos</li>
-                            </ul>
-                        </div>
+      <div class="readout">
+        <span>COORD</span>07.2306°S, 35.8811°W
+        <span style="margin-left:8px">BASE</span>Campina Grande · PB · Brasil
+        <span style="margin-left:8px">STATUS</span>Disponível para projetos
+      </div>
 
-                        <!-- Job 6 -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="job-header">
-                                <div>
-                                    <div class="job-title">Estagiário de Engenharia Elétrica</div>
-                                    <div class="job-company">BM Engenharia Elétrica</div>
-                                    <div class="job-location"><i class="fas fa-map-pin" style="margin-right:4px;color:var(--text-light);"></i>Açucena – MG</div>
-                                </div>
-                                <div class="job-period"><i class="fas fa-calendar-alt"></i>Jun 2011 – Dez 2011</div>
-                            </div>
-                            <ul class="job-list">
-                                <li>Apoio à inspeção e construção de subestações e usinas hidrelétricas</li>
-                                <li>Manutenção e análise técnica de instalações eletromecânicas</li>
-                                <li>Suporte a inspeções de campo e avaliações técnicas em engenharia elétrica</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EDUCATION -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h2>Formação Acadêmica</h2>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-icon"><i class="fas fa-university"></i></div>
-                        <div class="edu-content">
-                            <div class="edu-degree">Engenharia Elétrica</div>
-                            <div class="edu-school">Universidade Federal de Campina Grande (UFCG)</div>
-                            <div class="edu-year"><i class="fas fa-calendar-check" style="margin-right:4px;"></i>Conclusão: 2011</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
-                        <div class="edu-content">
-                            <div class="edu-degree">Pós-Graduação em Engenharia de Software</div>
-                            <div class="edu-school">Universidade Estácio de Sá</div>
-                            <div class="edu-year"><i class="fas fa-calendar-check" style="margin-right:4px;"></i>Conclusão: 2020</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-icon"><i class="fas fa-square-root-alt"></i></div>
-                        <div class="edu-content">
-                            <div class="edu-degree">Licenciatura em Matemática</div>
-                            <div class="edu-school">Universidade Estácio de Sá</div>
-                            <div class="edu-year"><i class="fas fa-calendar-check" style="margin-right:4px;"></i>Conclusão: 2019</div>
-                        </div>
-                    </div>
-                    <div class="edu-item">
-                        <div class="edu-icon"><i class="fas fa-ship"></i></div>
-                        <div class="edu-content">
-                            <div class="edu-degree">Especialização em Mecânica/Eletrônica</div>
-                            <div class="edu-school">Marinha do Brasil</div>
-                            <div class="edu-year"><i class="fas fa-calendar-check" style="margin-right:4px;"></i>Conclusão: 2013</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN -->
-            <div class="right-col">
-                <!-- SKILLS -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-cogs"></i></div>
-                        <h2>Competências Técnicas</h2>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-cat-title"><i class="fas fa-bolt"></i>Engenharia Elétrica</div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Sistemas Elétricos Industriais</span>
-                            <span class="skill-tag">Subestações</span>
-                            <span class="skill-tag">Baixa e Média Tensão</span>
-                            <span class="skill-tag">Inspeção Elétrica</span>
-                            <span class="skill-tag">Energia Renovável</span>
-                            <span class="skill-tag">Segurança Elétrica</span>
-                            <span class="skill-tag">Equipamentos Eletromecânicos</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-cat-title"><i class="fas fa-robot"></i>Automação & Instrumentação</div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Automação Industrial</span>
-                            <span class="skill-tag">Sistemas Embarcados</span>
-                            <span class="skill-tag">Sensores & IoT</span>
-                            <span class="skill-tag">PLC/Controle</span>
-                            <span class="skill-tag">Aquisição de Dados</span>
-                            <span class="skill-tag">Robótica com IA</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-cat-title"><i class="fas fa-chart-bar"></i>Confiabilidade & Gestão</div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Manutenção Preditiva</span>
-                            <span class="skill-tag">Manutenção Preventiva</span>
-                            <span class="skill-tag">Análise de Confiabilidade</span>
-                            <span class="skill-tag">CMMS</span>
-                            <span class="skill-tag">RCM & FMEA</span>
-                            <span class="skill-tag">Performance Operacional</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-cat-title"><i class="fas fa-code"></i>Software & Tecnologias</div>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript / TypeScript</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">AWS & Cloud</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">OpenCV</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NORMS -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h2>Normas & Metodologias</h2>
-                    </div>
-                    <div class="norms-grid">
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>NR-10</div>
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>Normas IEC</div>
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>Segurança Industrial</div>
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>Metodologias Ágeis</div>
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>Conceitos Lean</div>
-                        <div class="norm-item"><i class="fas fa-check-circle"></i>Documentação Técnica</div>
-                    </div>
-                </div>
-
-                <!-- LANGUAGES -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-globe"></i></div>
-                        <h2>Idiomas</h2>
-                    </div>
-                    <div class="lang-item">
-                        <div class="lang-name"><i class="fas fa-flag" style="color:var(--accent);"></i>Português</div>
-                        <span class="lang-level native">Nativo</span>
-                    </div>
-                    <div class="lang-item">
-                        <div class="lang-name"><i class="fas fa-flag-usa" style="color:var(--primary-light);"></i>Inglês</div>
-                        <span class="lang-level fluent">Fluente</span>
-                    </div>
-                    <div class="lang-item">
-                        <div class="lang-name"><i class="fas fa-flag" style="color:#f6e05e;"></i>Alemão</div>
-                        <span class="lang-level advanced">Avançado</span>
-                    </div>
-                </div>
-
-                <!-- ADDITIONAL INFO -->
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon"><i class="fas fa-info-circle"></i></div>
-                        <h2>Informações Adicionais</h2>
-                    </div>
-                    <ul class="info-list">
-                        <li><i class="fas fa-plane"></i>Disponibilidade para viagens</li>
-                        <li><i class="fas fa-industry"></i>Experiência em ambientes industriais multidisciplinares</li>
-                        <li><i class="fas fa-brain"></i>Forte capacidade analítica e resolução de problemas</li>
-                        <li><i class="fas fa-solar-panel"></i>Experiência com sistemas industriais, energia renovável e automação</li>
-                        <li><i class="fas fa-award"></i>Interesse em confiabilidade industrial, governança e excelência operacional</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <div class="herobtns">
+        <a class="btn primary" href="mailto:guigesaifarm@gmail.com">↳ Falar por e-mail</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/eglardo-fabricio-a6127538/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost" href="https://guigesaifarm.github.io/Campifitech/" target="_blank" rel="noopener">Portfólio ↗</a>
+        <a class="btn ghost" href="Eglardo_Fabricio_Curriculo.pdf">Baixar PDF ⭳</a>
+      </div>
     </div>
+  </header>
 
-    <button class="print-btn" onclick="imprimirCurriculo()">
-    <script src="js/script.js"></script>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <!-- content duplicated via JS for seamless loop -->
+    </div>
+  </div>
+
+  <section id="resumo">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <h2>Resumo Profissional</h2>
+        <span class="idx mono">§ 01</span>
+      </div>
+      <div class="hud lede">
+        <p>Engenheiro Eletricista e desenvolvedor de soluções tecnológicas com formação multidisciplinar em <strong>engenharia elétrica, automação industrial, instrumentação e engenharia de confiabilidade</strong>, aplicada junto a <strong>inteligência artificial, ciência de dados, IoT e agricultura de precisão</strong>.</p>
+        <p>Experiência em ambientes industriais envolvendo sistemas elétricos, equipamentos eletromecânicos, sistemas embarcados e arquiteturas IoT, com foco em manutenção preventiva e preditiva, monitoramento de condição e continuidade operacional.</p>
+        <p>Desenvolve soluções digitais <em>end‑to‑end</em> com Python, JavaScript/TypeScript, SQL, APIs e arquiteturas em nuvem, aplicando Machine Learning e Deep Learning a manutenção preditiva, visão computacional, monitoramento remoto e agricultura de precisão.</p>
+        <p>Processa e interpreta dados de satélite — incluindo imagens Sentinel‑2 — trabalhando com índices como <strong>NDVI, EVI, SAVI, NDWI, GNDVI, NDRE, NBR, NRFI e NDPI</strong> para avaliação de vigor de cultura, estresse hídrico e nutricional, detecção de anomalias e análise fenológica.</p>
+        <p>Interesse e experiência prática em <strong>Agrotech 5.0</strong>, integrando dados geoespaciais, sensores IoT, LoRa/LoRaWAN, IA, imagens de satélite e GIS para apoiar a tomada de decisão agrícola.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="atuacao">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <h2>Áreas de Atuação</h2>
+        <span class="idx mono">§ 02</span>
+      </div>
+      <div class="grid4">
+        <div class="area-card">
+          <span class="n">A.01</span>
+          <h3>Engenharia</h3>
+          <p>Elétrica &amp; E&amp;I, automação industrial, instrumentação &amp; controle, confiabilidade, manutenção preventiva e preditiva.</p>
+        </div>
+        <div class="area-card">
+          <span class="n">A.02</span>
+          <h3>Energia</h3>
+          <p>Energia renovável, sistemas fotovoltaicos, sistemas elétricos industriais, gestão de ativos.</p>
+        </div>
+        <div class="area-card">
+          <span class="n">A.03</span>
+          <h3>Dados &amp; IA</h3>
+          <p>Inteligência artificial, machine learning, engenharia de dados, ciência de dados, desenvolvimento de software.</p>
+        </div>
+        <div class="area-card">
+          <span class="n">A.04</span>
+          <h3>Agrotech</h3>
+          <p>Agricultura de precisão, sensoriamento remoto, inteligência de satélite, GIS, IoT &amp; LoRaWAN.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <h2>Experiência Profissional</h2>
+        <span class="idx mono">§ 03</span>
+      </div>
+
+      <div class="timeline">
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.01</span><h3>GuigesAIFarm <span class="loc">— Desenvolvedor de Projetos (Independente)</span></h3></div>
+              <span class="dates">2019 — Atual</span>
+            </div>
+            <p class="role">Desenvolvimento de software, IA, IoT e análise de dados aplicados a engenharia, agricultura de precisão e monitoramento industrial.</p>
+            <ul class="blist">
+              <li>Plataformas de monitoramento remoto e análise de dados.</li>
+              <li>Soluções de Machine Learning e Deep Learning para análise preditiva.</li>
+              <li>Integração de sensores, microcontroladores e sistemas embarcados.</li>
+              <li>Aplicações em Python, JavaScript/TypeScript e bancos SQL.</li>
+              <li>Soluções IoT para aquisição, transmissão e visualização de dados.</li>
+              <li>Visão computacional e IA aplicadas a Agrotech.</li>
+              <li>Conceitos de plataforma SaaS para monitoramento agrícola.</li>
+              <li>Integração de LoRa/LoRaWAN, dados geoespaciais e imagens de satélite.</li>
+            </ul>
+            <p class="tech"><b>Stack</b> — Python · JavaScript · TypeScript · SQL · Node.js · OpenCV · PyTorch · Scikit‑learn · IoT · LoRa/LoRaWAN · Cloud</p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.02</span><h3>Supercitrus <span class="loc">— Uberlândia, MG</span></h3></div>
+              <span class="dates">Jan 2024 — Mar 2024</span>
+            </div>
+            <p class="role">Analista de Planejamento e Controle da Produção</p>
+            <ul class="blist">
+              <li>Planejamento e monitoramento das atividades industriais de produção.</li>
+              <li>Controle de materiais, estoques e fluxos; suporte ao MRP.</li>
+              <li>Sistemas ERP e ferramentas analíticas de planejamento e controle.</li>
+              <li>Indicadores de desempenho operacional e relatórios em Excel.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.03</span><h3>Prefeitura Municipal de Uberlândia</h3></div>
+              <span class="dates">2020 — 2023</span>
+            </div>
+            <p class="role">Professor de Matemática e Ciências</p>
+            <ul class="blist">
+              <li>Ensino de Matemática, Ciências e fundamentos de Física.</li>
+              <li>Aprendizagem Baseada em Projetos (PBL) e sala de aula invertida.</li>
+              <li>Uso de GeoGebra, MATLAB e Google Classroom.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.04</span><h3>Eletroíta — Energia Renovável <span class="loc">— João Pessoa, PB</span></h3></div>
+              <span class="dates">Jan 2017 — Dez 2019</span>
+            </div>
+            <p class="role">Gerente de Projetos Elétricos</p>
+            <ul class="blist">
+              <li>Projetos elétricos fotovoltaicos residenciais, comerciais e industriais.</li>
+              <li>Estudos de demanda, carga, irradiância e desempenho energético.</li>
+              <li>Dimensionamento de sistemas fotovoltaicos e projetos de BT/MT.</li>
+              <li>Viabilidade técnico‑econômica e análise de ROI.</li>
+            </ul>
+            <p class="tech"><b>Ferramentas</b> — AutoCAD · Revit · PVsyst · HOMER · DIALux</p>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.05</span><h3>Marinha do Brasil <span class="loc">— Rio de Janeiro, RJ</span></h3></div>
+              <span class="dates">Fev 2012 — Nov 2016</span>
+            </div>
+            <p class="role">Primeiro‑Tenente (Reserva) — Engenheiro Eletrônico</p>
+            <ul class="blist">
+              <li>Manutenção de sistemas eletrônicos e eletromecânicos críticos.</li>
+              <li>Instalação, manutenção e inspeção de sistemas de radar e navegação.</li>
+              <li>Programas de manutenção preventiva e corretiva.</li>
+              <li>Coordenação de equipes técnicas multidisciplinares.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="hud tcard">
+            <div class="thead">
+              <div><span class="idx">EXP.06</span><h3>BM Engenharia Elétrica <span class="loc">— Açucena, MG</span></h3></div>
+              <span class="dates">Jun 2011 — Dez 2011</span>
+            </div>
+            <p class="role">Estagiário de Engenharia Elétrica</p>
+            <ul class="blist">
+              <li>Suporte a atividades de engenharia elétrica em campo.</li>
+              <li>Acompanhamento de obras de subestação e usinas hidrelétricas.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <h2>Formação Acadêmica</h2>
+        <span class="idx mono">§ 04</span>
+      </div>
+      <div class="grid2">
+        <div class="edu-card">
+          <h3>Bacharelado em Engenharia Elétrica/Eletrônica</h3>
+          <span class="school">Universidade Federal de Campina Grande (UFCG)</span>
+          <span class="meta">2011</span>
+        </div>
+        <div class="edu-card">
+          <h3>Pós‑graduação em Engenharia de Software</h3>
+          <span class="school">Universidade Estácio de Sá</span>
+          <span class="meta">2020 · 360h</span>
+        </div>
+        <div class="edu-card">
+          <h3>Pós‑graduação em Tecnologia da Informação</h3>
+          <span class="school">Faculdade Central de Minas</span>
+          <span class="meta">2026 · 640h</span>
+        </div>
+        <div class="edu-card">
+          <h3>Pós‑graduação em Agricultura e Agronegócio</h3>
+          <span class="school">Faculdade Central de Minas</span>
+          <span class="meta">2026 · 640h</span>
+        </div>
+        <div class="edu-card">
+          <h3>Pós‑graduação em Geoprocessamento</h3>
+          <span class="school">Faculdade Central de Minas</span>
+          <span class="meta">2026 · 640h</span>
+        </div>
+        <div class="edu-card">
+          <h3>Bacharelado em Matemática</h3>
+          <span class="school">Universidade Estácio de Sá</span>
+          <span class="meta">2019</span>
+        </div>
+        <div class="edu-card">
+          <h3>Pós‑graduação em Matemática, Estatística e Física</h3>
+          <span class="school">Faculdade do Vale Elvira Dayrell (FAVEI)</span>
+          <span class="meta">2021 · 700h</span>
+        </div>
+        <div class="edu-card">
+          <h3>Especialização em Eletrônica</h3>
+          <span class="school">Marinha do Brasil</span>
+          <span class="meta">2013</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <h2>Habilidades Técnicas</h2>
+        <span class="idx mono">§ 05</span>
+      </div>
+
+      <div class="skillgroup">
+        <span class="label">Automação &amp; Instrumentação</span>
+        <div class="chips">
+          <span class="chip">PLC · IEC 61131‑3 (ST/LD/FBD/SFC)</span>
+          <span class="chip">HART</span><span class="chip">WirelessHART</span>
+          <span class="chip">Modbus RTU/TCP</span><span class="chip">PROFIBUS</span>
+          <span class="chip">PROFINET</span><span class="chip">EtherNet/IP</span>
+          <span class="chip">ISOBUS</span><span class="chip">OPC UA</span><span class="chip">MQTT</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <span class="label">Confiabilidade &amp; Manutenção</span>
+        <div class="chips">
+          <span class="chip">FMEA</span><span class="chip">RCM</span><span class="chip">CMMS</span>
+          <span class="chip">Manutenção preventiva/preditiva</span>
+          <span class="chip">Monitoramento de condição</span><span class="chip">KPIs de manutenção</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <span class="label">Software &amp; IA</span>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+          <span class="chip">Node.js</span><span class="chip">SQL</span><span class="chip">APIs</span>
+          <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span>
+          <span class="chip">Visão Computacional</span><span class="chip">OpenCV</span>
+          <span class="chip">YOLO</span><span class="chip">PyTorch</span><span class="chip">Scikit‑learn</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <span class="label">Agrotech &amp; Geoespacial</span>
+        <div class="chips">
+          <span class="chip">Sentinel‑2</span><span class="chip">NDVI</span><span class="chip">NDRE</span>
+          <span class="chip">SAVI</span><span class="chip">QGIS</span><span class="chip">Geoprocessamento</span>
+          <span class="chip">IoT agrícola</span><span class="chip">LoRa/LoRaWAN</span>
+          <span class="chip">Monitoramento climático</span>
+        </div>
+      </div>
+
+      <div class="skillgroup">
+        <span class="label">Engenharia Elétrica &amp; Ferramentas</span>
+        <div class="chips">
+          <span class="chip">AutoCAD</span><span class="chip">Revit</span><span class="chip">PVsyst</span>
+          <span class="chip">HOMER</span><span class="chip">DIALux</span><span class="chip">NR‑10</span>
+          <span class="chip">Sistemas BT/MT</span><span class="chip">Energia fotovoltaica</span>
+        </div>
+      </div>
+
+      <div class="skillgroup" style="margin-top:38px;">
+        <span class="label">Idiomas</span>
+        <div class="langs">
+          <div class="lang">
+            <div class="name">Português</div>
+            <div class="lvl">Nativo</div>
+            <div class="bars"><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i></div>
+          </div>
+          <div class="lang">
+            <div class="name">Inglês</div>
+            <div class="lvl">Fluente</div>
+            <div class="bars"><i class="fill"></i><i class="fill"></i><i class="fill"></i><i class="fill"></i></div>
+          </div>
+          <div class="lang">
+            <div class="name">Alemão</div>
+            <div class="lvl">Avançado</div>
+            <div class="bars"><i class="fill"></i><i class="fill"></i><i class="fill"></i><i></i></div>
+          </div>
+          <div class="lang">
+            <div class="name">Russo</div>
+            <div class="lvl">Básico</div>
+            <div class="bars"><i class="fill"></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="wrap reveal">
+      <div class="contact-grid">
+        <div>
+          <div class="eyebrow">Contato</div>
+          <h2>Disponível para novos<br>projetos e colaborações.</h2>
+          <p class="lede-foot">Aberto a oportunidades em engenharia elétrica &amp; automação, transformação digital, inteligência artificial, tecnologia industrial e agrotech — com disponibilidade para viagens nacionais e internacionais.</p>
+          <div class="tagrow">
+            <span class="tag">Engenharia Elétrica</span>
+            <span class="tag">Automação Industrial</span>
+            <span class="tag">Confiabilidade</span>
+            <span class="tag">Engenharia de Dados</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Sensoriamento Remoto</span>
+          </div>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:guigesaifarm@gmail.com"><span class="k">E‑mail</span> guigesaifarm@gmail.com</a>
+          <a href="tel:+5583996018715"><span class="k">Telefone</span> +55 83 99601‑8715</a>
+          <a href="https://www.linkedin.com/in/eglardo-fabricio-a6127538/" target="_blank" rel="noopener"><span class="k">LinkedIn</span> /in/eglardo‑fabricio</a>
+          <a href="https://guigesaifarm.github.io/Campifitech/" target="_blank" rel="noopener"><span class="k">Portfólio</span> Campifitech</a>
+        </div>
+      </div>
+
+      <div class="foot-meta">
+        <span>© 2026 Eglardo Fabrício Alves dos Santos</span>
+        <span class="coord">07.2306°S 35.8811°W · Campina Grande, PB, Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Build seamless ticker from key facts, duplicated for infinite loop
+  (function(){
+    const facts = [
+      "15+ ANOS DE EXPERIÊNCIA MULTIDISCIPLINAR",
+      "8 FORMAÇÕES ACADÊMICAS",
+      "SENTINEL‑2 · NDVI · NDRE · SAVI · NDWI",
+      "PYTHON · PYTORCH · OPENCV · SCIKIT‑LEARN",
+      "IEC 61131‑3 · MODBUS · OPC UA · MQTT",
+      "AGROTECH 5.0 · IoT · LoRa/LoRaWAN",
+      "EX‑OFICIAL · MARINHA DO BRASIL",
+      "PT · EN · DE · RU"
+    ];
+    const track = document.getElementById('tickerTrack');
+    const build = () => facts.map(f => `<span class="ticker-item"><b>▸</b> ${f}</span>`).join('<span class="ticker-item sep">/</span>');
+    track.innerHTML = build() + build();
+  })();
+
+  // Mobile nav toggle
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const nav = document.getElementById('navLinks');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+      btn.textContent = '☰';
+    }));
+  })();
+
+  // Scroll reveal
+  (function(){
+    const items = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ items.forEach(i => i.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    items.forEach(i => io.observe(i));
+  })();
+</script>
+
 </body>
 </html>
